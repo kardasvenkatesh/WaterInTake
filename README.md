@@ -54,6 +54,9 @@ com.template.app/
 
 ## 🛠️ How to Use
 
+> [!TIP]
+> **Beginner ho?** Agar aap non-coder hain toh pehle [**BEGINNER_GUIDE.md**](BEGINNER_GUIDE.md) dekhein.
+
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/ThecodingShef/DroidStack-Template.git

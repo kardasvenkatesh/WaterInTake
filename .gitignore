@@ -1,0 +1,19 @@
+# Keys & secrets (NEVER commit these)
+local.properties
+*.jks
+*.keystore
+keystore.properties
+google-services.json
+
+# Build outputs
+/build
+/app/build
+.gradle/
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Release
+release/

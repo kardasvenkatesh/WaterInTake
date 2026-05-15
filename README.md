@@ -21,11 +21,25 @@ DroidStack is a production-ready, clean-architecture Android template designed f
 - **Image Loading**: Coil for high-performance image loading.
 - **Theming**: Premium dark/light mode support with Material 3 Dynamic Color (optional).
 - **Quality**: ProGuard/R8 rules pre-configured for release.
-- **AI Ready**: Includes `AGENTS.md` to guide AI coding assistants (like Antigravity or Claude) to follow your project's rules.
+- **AI Ready**: Includes a custom `droidstack` skill and official [Google Android Skills](https://github.com/android/skills) to guide AI coding assistants (like Antigravity or Gemini) to follow expert Android patterns.
+- **Agentic Setup**: Pre-configured with `.agents/skills` to provide zero-config support for agentic development.
 
 ---
 
-## 📂 Project Structure
+## 🤖 AI-Native Development (Agentic Support)
+
+This project is built for the future of development. It includes **Agent Skills**, which are modular instructions that your AI coding assistant (Antigravity, Gemini, etc.) automatically reads to help you build faster and better.
+
+### Included Skills:
+- **`droidstack`**: Custom skill for this template's architecture (Simple MVVM, No UseCases).
+- **Official Android Skills**: Includes Google's official expertise for:
+    - **AGP Upgrades**: Seamless Gradle plugin updates.
+    - **Compose Migrations**: Best practices for modern UI.
+    - **R8 Analyzer**: Troubleshooting release builds.
+    - **Edge-to-Edge**: Perfecting immersive layouts.
+    - **Play Billing**: Handling Google Play transactions.
+
+These skills are stored in the `.agents/skills/` directory. They **do not** increase your app's APK size and are only used to help the developer work more efficiently with AI.
 
 ```text
 com.template.app/

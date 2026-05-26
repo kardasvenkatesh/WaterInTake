@@ -31,6 +31,20 @@ jobs:
           name: Build Debug APK
           command: ./gradlew assembleDebug
 
+      - run:
+          name: Install Firebase CLI
+          command: |
+            curl -sL https://firebase.tools | bash
+
+      - run:
+          name: Upload APK to Firebase
+          command: |
+            firebase appdistribution:distribute \
+            app/build/outputs/apk/debug/app-debug.apk \
+            --app $FIREBASE_APP_ID \
+            --groups testers \
+            --token $FIREBASE_TOKEN
+
       - save_cache:
           paths:
             - ~/.gradle

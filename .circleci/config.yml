@@ -42,7 +42,7 @@ jobs:
             firebase appdistribution:distribute \
             app/build/outputs/apk/debug/app-debug.apk \
             --app $FIREBASE_APP_ID \
-            --groups testers \
+            --groups beta_testers \
             --token $FIREBASE_TOKEN
 
       - save_cache:

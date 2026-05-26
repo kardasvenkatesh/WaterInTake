@@ -37,7 +37,7 @@ jobs:
             curl -sL https://firebase.tools | bash
 
       - run:
-          name: Upload APK to Firebase
+          name: Upload APK to Firebase1
           command: |
             firebase appdistribution:distribute \
             app/build/outputs/apk/debug/app-debug.apk \

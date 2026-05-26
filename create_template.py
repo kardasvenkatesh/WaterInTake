@@ -20,11 +20,11 @@ files["app/build.gradle.kts"] = """plugins {
 }
 
 android {
-    namespace = "com.template.app"
+    namespace = "com.kardas.waterintakereminder"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.template.app"
+        applicationId = "com.kardas.waterintakereminder"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
@@ -164,7 +164,7 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 """
 
-files["app/src/main/java/com/template/app/MainApplication.kt"] = """package com.template.app
+files["app/src/main/java/com/template/app/MainApplication.kt"] = """package com.kardas.waterintakereminder
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
@@ -183,7 +183,7 @@ class MainApplication : Application() {
 }
 """
 
-files["app/src/main/java/com/template/app/MainActivity.kt"] = """package com.template.app
+files["app/src/main/java/com/template/app/MainActivity.kt"] = """package com.kardas.waterintakereminder
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -194,8 +194,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.template.app.presentation.navigation.AppNavGraph
-import com.template.app.presentation.theme.AppTheme
+import com.kardas.waterintakereminder.presentation.navigation.AppNavGraph
+import com.kardas.waterintakereminder.presentation.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -223,7 +223,7 @@ class MainActivity : ComponentActivity() {
 }
 """
 
-files["app/src/main/java/com/template/app/presentation/theme/Color.kt"] = """package com.template.app.presentation.theme
+files["app/src/main/java/com/template/app/presentation/theme/Color.kt"] = """package com.kardas.waterintakereminder.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
@@ -247,7 +247,7 @@ val ErrorColor = Color(0xFFE74C3C)
 val WarningColor = Color(0xFFF39C12)
 """
 
-files["app/src/main/java/com/template/app/presentation/theme/Type.kt"] = """package com.template.app.presentation.theme
+files["app/src/main/java/com/template/app/presentation/theme/Type.kt"] = """package com.kardas.waterintakereminder.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -277,7 +277,7 @@ val Typography = Typography(
 )
 """
 
-files["app/src/main/java/com/template/app/presentation/theme/Theme.kt"] = """package com.template.app.presentation.theme
+files["app/src/main/java/com/template/app/presentation/theme/Theme.kt"] = """package com.kardas.waterintakereminder.presentation.theme
 
 import android.app.Activity
 import android.os.Build
@@ -349,7 +349,7 @@ fun AppTheme(
 }
 """
 
-files["app/src/main/java/com/template/app/presentation/navigation/Screen.kt"] = """package com.template.app.presentation.navigation
+files["app/src/main/java/com/template/app/presentation/navigation/Screen.kt"] = """package com.kardas.waterintakereminder.presentation.navigation
 
 /**
  * Sealed class defining all app screens and routes.
@@ -362,15 +362,15 @@ sealed class Screen(val route: String) {
 }
 """
 
-files["app/src/main/java/com/template/app/presentation/navigation/AppNavGraph.kt"] = """package com.template.app.presentation.navigation
+files["app/src/main/java/com/template/app/presentation/navigation/AppNavGraph.kt"] = """package com.kardas.waterintakereminder.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.template.app.presentation.screens.splash.SplashScreen
-import com.template.app.presentation.screens.home.HomeScreen
-import com.template.app.presentation.screens.settings.SettingsScreen
+import com.kardas.waterintakereminder.presentation.screens.splash.SplashScreen
+import com.kardas.waterintakereminder.presentation.screens.home.HomeScreen
+import com.kardas.waterintakereminder.presentation.screens.settings.SettingsScreen
 
 /**
  * Main navigation graph for the application.
@@ -414,7 +414,7 @@ fun AppNavGraph() {
 }
 """
 
-files["app/src/main/java/com/template/app/utils/UiState.kt"] = """package com.template.app.utils
+files["app/src/main/java/com/template/app/utils/UiState.kt"] = """package com.kardas.waterintakereminder.utils
 
 /**
  * Generic sealed class for managing UI state.
@@ -427,7 +427,7 @@ sealed class UiState<out T> {
 }
 """
 
-files["app/src/main/java/com/template/app/utils/Extensions.kt"] = """package com.template.app.utils
+files["app/src/main/java/com/template/app/utils/Extensions.kt"] = """package com.kardas.waterintakereminder.utils
 
 import android.content.Context
 import android.widget.Toast
@@ -457,7 +457,7 @@ fun Modifier.clickableWithRipple(onClick: () -> Unit): Modifier = composed {
 }
 """
 
-files["app/src/main/java/com/template/app/utils/Constants.kt"] = """package com.template.app.utils
+files["app/src/main/java/com/template/app/utils/Constants.kt"] = """package com.kardas.waterintakereminder.utils
 
 /**
  * App-wide constants.
@@ -470,7 +470,7 @@ object Constants {
 }
 """
 
-files["app/src/main/java/com/template/app/presentation/components/AppButton.kt"] = """package com.template.app.presentation.components
+files["app/src/main/java/com/template/app/presentation/components/AppButton.kt"] = """package com.kardas.waterintakereminder.presentation.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -565,7 +565,7 @@ fun AppTextButton(
 }
 """
 
-files["app/src/main/java/com/template/app/presentation/components/AppTextField.kt"] = """package com.template.app.presentation.components
+files["app/src/main/java/com/template/app/presentation/components/AppTextField.kt"] = """package com.kardas.waterintakereminder.presentation.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -618,7 +618,7 @@ fun AppTextField(
 }
 """
 
-files["app/src/main/java/com/template/app/presentation/components/AppCard.kt"] = """package com.template.app.presentation.components
+files["app/src/main/java/com/template/app/presentation/components/AppCard.kt"] = """package com.kardas.waterintakereminder.presentation.components
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -668,7 +668,7 @@ fun AppCard(
 }
 """
 
-files["app/src/main/java/com/template/app/presentation/components/LoadingView.kt"] = """package com.template.app.presentation.components
+files["app/src/main/java/com/template/app/presentation/components/LoadingView.kt"] = """package com.kardas.waterintakereminder.presentation.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -691,7 +691,7 @@ fun LoadingView(modifier: Modifier = Modifier) {
 }
 """
 
-files["app/src/main/java/com/template/app/presentation/components/EmptyStateView.kt"] = """package com.template.app.presentation.components
+files["app/src/main/java/com/template/app/presentation/components/EmptyStateView.kt"] = """package com.kardas.waterintakereminder.presentation.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -761,7 +761,7 @@ fun EmptyStateView(
 }
 """
 
-files["app/src/main/java/com/template/app/data/local/entity/PlaceholderEntity.kt"] = """package com.template.app.data.local.entity
+files["app/src/main/java/com/template/app/data/local/entity/PlaceholderEntity.kt"] = """package com.kardas.waterintakereminder.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -776,13 +776,13 @@ data class PlaceholderEntity(
 )
 """
 
-files["app/src/main/java/com/template/app/data/local/dao/PlaceholderDao.kt"] = """package com.template.app.data.local.dao
+files["app/src/main/java/com/template/app/data/local/dao/PlaceholderDao.kt"] = """package com.kardas.waterintakereminder.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.template.app.data.local.entity.PlaceholderEntity
+import com.kardas.waterintakereminder.data.local.entity.PlaceholderEntity
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -798,12 +798,12 @@ interface PlaceholderDao {
 }
 """
 
-files["app/src/main/java/com/template/app/data/local/AppDatabase.kt"] = """package com.template.app.data.local
+files["app/src/main/java/com/template/app/data/local/AppDatabase.kt"] = """package com.kardas.waterintakereminder.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.template.app.data.local.dao.PlaceholderDao
-import com.template.app.data.local.entity.PlaceholderEntity
+import com.kardas.waterintakereminder.data.local.dao.PlaceholderDao
+import com.kardas.waterintakereminder.data.local.entity.PlaceholderEntity
 
 /**
  * Room App Database.
@@ -819,12 +819,12 @@ abstract class AppDatabase : RoomDatabase() {
 }
 """
 
-files["app/src/main/java/com/template/app/di/DatabaseModule.kt"] = """package com.template.app.di
+files["app/src/main/java/com/template/app/di/DatabaseModule.kt"] = """package com.kardas.waterintakereminder.di
 
 import android.content.Context
 import androidx.room.Room
-import com.template.app.data.local.AppDatabase
-import com.template.app.utils.Constants
+import com.kardas.waterintakereminder.data.local.AppDatabase
+import com.kardas.waterintakereminder.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -853,7 +853,7 @@ object DatabaseModule {
 }
 """
 
-files["app/src/main/java/com/template/app/domain/model/PlaceholderModel.kt"] = """package com.template.app.domain.model
+files["app/src/main/java/com/template/app/domain/model/PlaceholderModel.kt"] = """package com.kardas.waterintakereminder.domain.model
 
 /**
  * Placeholder Domain Model.
@@ -864,9 +864,9 @@ data class PlaceholderModel(
 )
 """
 
-files["app/src/main/java/com/template/app/domain/repository/PlaceholderRepository.kt"] = """package com.template.app.domain.repository
+files["app/src/main/java/com/template/app/domain/repository/PlaceholderRepository.kt"] = """package com.kardas.waterintakereminder.domain.repository
 
-import com.template.app.domain.model.PlaceholderModel
+import com.kardas.waterintakereminder.domain.model.PlaceholderModel
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -878,12 +878,12 @@ interface PlaceholderRepository {
 }
 """
 
-files["app/src/main/java/com/template/app/data/repository/PlaceholderRepositoryImpl.kt"] = """package com.template.app.data.repository
+files["app/src/main/java/com/template/app/data/repository/PlaceholderRepositoryImpl.kt"] = """package com.kardas.waterintakereminder.data.repository
 
-import com.template.app.data.local.dao.PlaceholderDao
-import com.template.app.data.local.entity.PlaceholderEntity
-import com.template.app.domain.model.PlaceholderModel
-import com.template.app.domain.repository.PlaceholderRepository
+import com.kardas.waterintakereminder.data.local.dao.PlaceholderDao
+import com.kardas.waterintakereminder.data.local.entity.PlaceholderEntity
+import com.kardas.waterintakereminder.domain.model.PlaceholderModel
+import com.kardas.waterintakereminder.domain.repository.PlaceholderRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -907,7 +907,7 @@ class PlaceholderRepositoryImpl @Inject constructor(
 }
 """
 
-files["app/src/main/java/com/template/app/domain/usecase/PlaceholderUseCase.kt"] = """package com.template.app.domain.usecase
+files["app/src/main/java/com/template/app/domain/usecase/PlaceholderUseCase.kt"] = """package com.kardas.waterintakereminder.domain.usecase
 
 // TEMPLATE: Not heavily using UseCases per request, 
 // keeping this as a simple placeholder if needed later.
@@ -917,10 +917,10 @@ class PlaceholderUseCase {
 }
 """
 
-files["app/src/main/java/com/template/app/di/RepositoryModule.kt"] = """package com.template.app.di
+files["app/src/main/java/com/template/app/di/RepositoryModule.kt"] = """package com.kardas.waterintakereminder.di
 
-import com.template.app.data.repository.PlaceholderRepositoryImpl
-import com.template.app.domain.repository.PlaceholderRepository
+import com.kardas.waterintakereminder.data.repository.PlaceholderRepositoryImpl
+import com.kardas.waterintakereminder.domain.repository.PlaceholderRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -939,13 +939,13 @@ abstract class RepositoryModule {
 }
 """
 
-files["app/src/main/java/com/template/app/di/AppModule.kt"] = """package com.template.app.di
+files["app/src/main/java/com/template/app/di/AppModule.kt"] = """package com.kardas.waterintakereminder.di
 
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import com.template.app.utils.Constants
+import com.kardas.waterintakereminder.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -967,7 +967,7 @@ object AppModule {
 }
 """
 
-files["app/src/main/java/com/template/app/presentation/screens/splash/SplashScreen.kt"] = """package com.template.app.presentation.screens.splash
+files["app/src/main/java/com/template/app/presentation/screens/splash/SplashScreen.kt"] = """package com.kardas.waterintakereminder.presentation.screens.splash
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -1002,13 +1002,13 @@ fun SplashScreen(
 }
 """
 
-files["app/src/main/java/com/template/app/presentation/screens/home/HomeViewModel.kt"] = """package com.template.app.presentation.screens.home
+files["app/src/main/java/com/template/app/presentation/screens/home/HomeViewModel.kt"] = """package com.kardas.waterintakereminder.presentation.screens.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.template.app.domain.model.PlaceholderModel
-import com.template.app.domain.repository.PlaceholderRepository
-import com.template.app.utils.UiState
+import com.kardas.waterintakereminder.domain.model.PlaceholderModel
+import com.kardas.waterintakereminder.domain.repository.PlaceholderRepository
+import com.kardas.waterintakereminder.utils.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -1055,7 +1055,7 @@ class HomeViewModel @Inject constructor(
 }
 """
 
-files["app/src/main/java/com/template/app/presentation/screens/home/HomeScreen.kt"] = """package com.template.app.presentation.screens.home
+files["app/src/main/java/com/template/app/presentation/screens/home/HomeScreen.kt"] = """package com.kardas.waterintakereminder.presentation.screens.home
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -1076,10 +1076,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.template.app.presentation.components.EmptyStateView
-import com.template.app.presentation.components.LoadingView
-import com.template.app.presentation.components.AppCard
-import com.template.app.utils.UiState
+import com.kardas.waterintakereminder.presentation.components.EmptyStateView
+import com.kardas.waterintakereminder.presentation.components.LoadingView
+import com.kardas.waterintakereminder.presentation.components.AppCard
+import com.kardas.waterintakereminder.utils.UiState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -1094,7 +1094,7 @@ fun HomeScreen(
             TopAppBar(
                 title = { Text("Home") },
                 actions = {
-                    com.template.app.presentation.components.AppTextButton(
+                    com.kardas.waterintakereminder.presentation.components.AppTextButton(
                         text = "Settings",
                         onClick = onNavigateToSettings
                     )
@@ -1130,7 +1130,7 @@ fun HomeScreen(
 }
 """
 
-files["app/src/main/java/com/template/app/presentation/screens/settings/SettingsScreen.kt"] = """package com.template.app.presentation.screens.settings
+files["app/src/main/java/com/template/app/presentation/screens/settings/SettingsScreen.kt"] = """package com.kardas.waterintakereminder.presentation.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -1236,7 +1236,7 @@ files["app/proguard-rules.pro"] = """# Kotlin
 
 # Models
 # TODO: Keep your data models
--keep class com.template.app.domain.model.** { *; }
+-keep class com.kardas.waterintakereminder.domain.model.** { *; }
 """
 
 files[".gitignore"] = """# Keys & secrets (NEVER commit these)
@@ -1278,7 +1278,7 @@ files["README.md"] = """## Android Project Template
 
 ### How to use this template:
 1. Clone this repo
-2. Find & Replace "com.template.app" with your package name
+2. Find & Replace "com.kardas.waterintakereminder" with your package name
 3. Find & Replace "AndroidTemplate" with your app name
 4. Update theme/Color.kt with your brand colors
 5. Update theme/Type.kt with your font
@@ -1349,3 +1349,4 @@ for path, content in files.items():
     with open(path, "w") as f:
         f.write(content)
 print("done")
+

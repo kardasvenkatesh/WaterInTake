@@ -42,7 +42,7 @@ This project is built for the future of development. It includes **Agent Skills*
 These skills are stored in the `.agents/skills/` directory. They **do not** increase your app's APK size and are only used to help the developer work more efficiently with AI.
 
 ```text
-com.template.app/
+com.kardas.waterintakereminder/
 ├── data/           # Data Sources (Room, DataStore, Repository Implementation)
 ├── domain/         # Business Rules (Models, Repository Interfaces)
 ├── presentation/   # UI (Screens, ViewModels, Components, Navigation, Theme)
@@ -63,7 +63,7 @@ com.template.app/
    ```
 
 2. **Personalize**:
-   - Replace `com.template.app` with your package name (Global search & replace).
+   - Replace `com.kardas.waterintakereminder` with your package name (Global search & replace).
    - Rename the app in `res/values/strings.xml` (`app_name`).
    - Customize colors in `presentation/theme/Color.kt`.
 
@@ -89,3 +89,4 @@ This project is optimized for AI-assisted coding. The `AGENTS.md` file provides 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 Created with ❤️ by **thecodingshef**
+

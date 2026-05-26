@@ -1,14 +1,14 @@
-# ShefStack — Android Template by thecodingshef
+# WaterInTaker — Water InTake Reminder App
 
 ## Project Identity
-- Template Name : ShefStack
+- App Name      : WaterInTaker
 - Created by    : thecodingshef
 - Language      : Kotlin
 - UI Toolkit    : Jetpack Compose + Material 3
 - Architecture  : Clean Architecture + Simple MVVM
 - Min SDK       : 26 (Android 8.0)
 - Target SDK    : 35
-- Package       : com.shefstack.android
+- Package       : com.kardas.waterintakereminder
 
 ---
 
@@ -75,10 +75,10 @@ util/          → Helpers, Extensions, Constants
 ### Rule 1: No Fully-Qualified Inline Names
 ```kotlin
 // WRONG
-com.shefstack.android.presentation.components.AppButton()
+com.kardas.waterintakereminder.presentation.components.AppButton()
 
 // CORRECT
-import com.shefstack.android.presentation.components.AppButton
+import com.kardas.waterintakereminder.presentation.components.AppButton
 AppButton()
 ```
 
@@ -97,7 +97,7 @@ AppButton()
 - Only use custom components if they already exist in presentation/components/ or are explicitly requested
 
 ### Rule 5: Internal Package
-- All internal imports must start with: com.shefstack.android
+- All internal imports must start with: com.kardas.waterintakereminder
 
 ### Rule 6: No Hardcoded Strings
 - Never use hardcoded strings in Composable files.
@@ -137,7 +137,7 @@ Every screen composable must handle all 5 states:
 ## Folder Structure — Always Follow This
 
 ```
-com.shefstack.android/
+com.kardas.waterintakereminder/
 ├── data/
 │   ├── local/
 │   │   ├── dao/
@@ -245,3 +245,102 @@ Constraints:
 - Use findViewById (Compose only)
 - Write business logic inside a Screen composable
 - Write UI logic inside a Repository
+
+---
+
+## MVP Plan — Smart Water Intake Reminder App
+
+### MVP Goal
+Build a simple but intelligent hydration app that:
+- Helps users build a water-drinking habit
+- Avoids annoying reminders
+- Feels modern and lightweight
+- Provides visible progress/motivation
+
+The MVP should be fast to build, easy to maintain, and differentiated from existing apps.
+
+### Core UVP (Unique Value Proposition)
+> “A smart hydration habit app that adapts reminders to the user’s lifestyle instead of spamming notifications.”
+
+Most apps send fixed, repetitive reminders and get uninstalled quickly. WaterInTaker becomes contextual, lightweight, and productivity-focused.
+
+### Target MVP Audience
+- **Primary**: IT employees, developers, remote workers, and students.
+- **Reason**: They often forget hydration during long focus sessions.
+
+---
+
+### MVP — Core Features
+
+#### 1. Smart Personalized Reminder Engine ⭐ (Main Feature)
+Instead of static "Drink water every 1 hour" reminders, the app intelligently adapts reminder timing based on:
+- User wake-up and sleep times
+- Weather conditions
+- Inactivity duration
+- Water already consumed
+
+**Reminder Types**:
+- *Gentle Reminder*: "Time for a small hydration break 💧"
+- *Smart Reminder*: "You’ve been inactive for 2 hours. Drink 250ml."
+- *Progress Reminder*: "You’re only 500ml away from today’s goal."
+
+**Onboarding Flow**:
+- User enters: wake-up/sleep time, weight, work style (desk job, active, student, workout).
+- App calculates: daily water goal and initial reminder frequency.
+- Frequency adapts dynamically (e.g., hot weather increases frequency; missing reminders reduces frequency; goal reached decreases reminders).
+
+#### 2. One-Tap Water Logging ⭐
+Fast and frictionless water logging to improve retention:
+- Quick-add buttons on the dashboard: `+100ml`, `+250ml`, `+500ml`, and a `Custom` amount.
+- Intake updates instantly with smooth progress ring animations on a single tap.
+- Future addition: Lockscreen actions and notification quick-adds.
+
+#### 3. Daily Progress Dashboard ⭐
+Visible motivation on the main screen:
+- **Circular Progress Ring**: Shows e.g., "1.8L / 3L completed".
+- **Streak Counter**: Keeps track of daily completion (e.g., "7 Day Hydration Streak").
+- **Intake Timeline**: Displays morning, afternoon, and evening consumption.
+- **Daily Status Indicator**: Dynamic status text (e.g., *Excellent hydration*, *Moderate hydration*, *Low hydration*).
+
+#### 4. Hydration Insights ⭐
+Provide meaningful behavioral trends:
+- **Weekly Analysis**: "You drink 35% less water on weekends."
+- **Time-Based Insight**: "Your hydration drops after 4 PM."
+- **Habit Insight**: "You consistently complete goals on workdays."
+- **Summary Screen**: Shows average intake, best hydration day, weakest hydration time, and streak growth.
+
+#### 5. Minimal Productivity-Focused UI ⭐
+A clean, premium UI designed for professionals and students:
+- Looks and feels like modern productivity apps (e.g., Notion, Calm).
+- Calming color palette, sleek dark mode support, and micro-animations.
+- Zero clutter: main dashboard shows only progress, quick-add buttons, next reminder, and streak.
+
+---
+
+### Suggested MVP Timeline & Tech Stack
+
+#### Tech Stack
+- **UI & Architecture**: Jetpack Compose + Material 3, Clean Architecture + MVVM, Navigation Compose
+- **DI & Database**: Hilt, Room (Database name: `"water_intake"`), DataStore Preferences
+- **Background Operations**: WorkManager (for smart reminder scheduling)
+- **Async/Logging**: Coroutines + Flow, Timber
+
+#### Timeline
+- **Week 1**: Onboarding setup, local database storage (Room/DataStore), dashboard UI with progress ring.
+- **Week 2**: Smart reminder engine logic, notification system, and quick logging functionality.
+- **Week 3**: Insights page, consistency charts, and streak calculation.
+- **Week 4**: Polish, animations, end-to-end testing, and Play Store release.
+
+---
+
+### Future Enhancements (Post-MVP)
+- Smartwatch sync
+- AI coaching and hydration prediction
+- Voice logging
+- Wearable and Health App integration (e.g., Health Connect)
+- Social challenges
+
+### Product Positioning
+- **Not**: "Drink water reminder"
+- **Instead**: "Smart hydration habit companion for focused professionals."
+

@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.template.app"
+    namespace = "com.kardas.waterintakereminder"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.template.app"
+        applicationId = "com.kardas.waterintakereminder"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

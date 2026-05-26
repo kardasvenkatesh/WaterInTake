@@ -29,4 +29,4 @@
 
 # Models
 # TODO: Keep your data models
--keep class com.template.app.domain.model.** { *; }
+-keep class com.kardas.waterintakereminder.domain.model.** { *; }

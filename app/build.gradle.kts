@@ -85,4 +85,7 @@ dependencies {
 
     // Timber
     implementation(libs.timber)
+
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
 }

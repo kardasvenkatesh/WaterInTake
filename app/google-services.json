@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "74571195663",
+    "project_id": "waterintake-2afba",
+    "storage_bucket": "waterintake-2afba.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74571195663:android:479a218911b663bd060a7a",
+        "android_client_info": {
+          "package_name": "com.kardas.waterintakereminder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJeE0GeMbmQytUZTnV347XlbEr0cWYKP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
